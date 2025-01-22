@@ -77,6 +77,7 @@ export const getReleases = async (
     title: item.title,
     type: item.type,
     year: item.year,
+    main_release: item.main_release,
   }));
 };
 

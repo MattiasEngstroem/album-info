@@ -11,6 +11,7 @@ export type releaseObject = {
   title: string;
   type: string;
   year: number;
+  main_release?: number;
 };
 
 export type releaseInfoObject = {

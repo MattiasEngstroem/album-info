@@ -1,5 +1,7 @@
 //import './style.scss';
 
+import { artistObject } from "./types/types";
+
 import {
   fetchFromAPI,
   getArtistID,
@@ -7,6 +9,9 @@ import {
   getReleases,
 } from "./API/FetchFromAPI";
 
-console.log(await getArtistID("lisa+nilsson"));
-console.log(await getReleases("85499"));
-console.log(await getReleaseByID("3595153"));
+import { createSearchForm } from "./components/search-form/search-form";
+
+console.log(await getArtistID("chino+mariano"));
+console.log(await fetchFromAPI("artists/677732/releases"));
+console.log(await getReleaseByID("1404933"));
+createSearchForm();

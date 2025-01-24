@@ -1,4 +1,4 @@
-import { getArtistID } from "../../API/FetchFromAPI";
+import { getArtistID } from "../../API/getArtistID";
 
 import { artistObject } from "../../types/types";
 

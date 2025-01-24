@@ -1,8 +1,11 @@
-import { getReleases } from "../../API/FetchFromAPI";
+import { getReleases } from "../../API/getReleases";
 import { artistObject, releaseObject } from "../../types/types";
 import { releaseInfo } from "../release-info/release-info";
 
-export const renderCards = async (artist: artistObject): Promise<void> => {
+export const renderCards = async (
+  artist: artistObject,
+  sortBy: string
+): Promise<void> => {
   const header = document.querySelector(
     ".releases-header-content"
   ) as HTMLHeadingElement;
@@ -14,16 +17,15 @@ export const renderCards = async (artist: artistObject): Promise<void> => {
   const releases: releaseObject[] = await getReleases(String(artist.id));
   releasesCards.textContent = "";
 
-  //TODO: lägg in i sökformuläret att man får välja vad man vill sortera på, skicka in det i den här modulen
   releases.sort((a, b) => {
-    if (a.year < b.year) return -1;
-    if (a.year > b.year) return 1;
+    if (sortBy === "year" && a.year < b.year) return -1;
+    if (sortBy === "year" && a.year > b.year) return 1;
 
-    //if (a.artist < b.artist) return -1;
-    //if (a.artist > b.artist) return 1;
+    if (sortBy === "artist" && a.artist < b.artist) return -1;
+    if (sortBy === "artist" && a.artist > b.artist) return 1;
 
-    //if (a.title < b.title) return -1;
-    //if (a.title > b.title) return 1;
+    if (sortBy === "title" && a.title < b.title) return -1;
+    if (sortBy === "title" && a.title > b.title) return 1;
 
     return 0;
   });

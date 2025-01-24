@@ -1,4 +1,4 @@
-import { getReleaseByID } from "../../API/FetchFromAPI";
+import { getReleaseByID } from "../../API/getReleaseByID";
 import { releaseInfoObject } from "../../types/types";
 
 export const releaseInfo = async (releaseID: string): Promise<void> => {

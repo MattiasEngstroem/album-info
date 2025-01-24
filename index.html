@@ -12,7 +12,19 @@
     </header>
     <div class="container">
       <div class="search">
-        <div class="search-form"></div>
+        <div class="search-form">
+          <form>
+            <label for="search-input">Artist / Musician: </label>
+            <input type="text" id="search-input" name="search-input" />
+            <label for="sort-by">sort releases by: </label>
+            <select id="sort-by" name="sort-by" value="year">
+              <option>year</option>
+              <option value="artist">main artist</option>
+              <option>title</option>
+            </select>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
         <div class="search-history"></div>
       </div>
       <div class="releases">

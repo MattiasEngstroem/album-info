@@ -1,3 +1,4 @@
+import "./release-cards.scss";
 import { getReleases } from "../../API/getReleases";
 import { artistObject, releaseObject } from "../../types/types";
 import { releaseInfo } from "../release-info/release-info";
@@ -17,15 +18,17 @@ export const renderCards = async (
   const releases: releaseObject[] = await getReleases(String(artist.id));
   releasesCards.textContent = "";
 
+  // inbyggd funktion för att sortera en array
   releases.sort((a, b) => {
-    if (sortBy === "year" && a.year < b.year) return -1;
-    if (sortBy === "year" && a.year > b.year) return 1;
+    // säkerställ att sortBy innehåller namnet på en giltig nyckel
+    const key = sortBy as keyof releaseObject;
 
-    if (sortBy === "artist" && a.artist < b.artist) return -1;
-    if (sortBy === "artist" && a.artist > b.artist) return 1;
-
-    if (sortBy === "title" && a.title < b.title) return -1;
-    if (sortBy === "title" && a.title > b.title) return 1;
+    // säkerställ att inget av värdena är 'undefined'
+    if (a[key] && b[key]) {
+      // jämför värdena och lägg elementen i rätt ordning i arrayen
+      if (a[key] < b[key]) return -1;
+      if (a[key] > b[key]) return 1;
+    }
 
     return 0;
   });

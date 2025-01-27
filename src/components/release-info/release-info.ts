@@ -1,3 +1,4 @@
+import "./release-info.scss";
 import { getReleaseByID } from "../../API/getReleaseByID";
 import { releaseInfoObject } from "../../types/types";
 
@@ -19,7 +20,9 @@ export const releaseInfo = async (releaseID: string): Promise<void> => {
 
   const albumName = document.createElement("h3");
   albumName.classList.add("album-name");
-  albumName.textContent = `${release.artists_sort}: ${release.title} (${release.released})`;
+  albumName.textContent = `${release.artists_sort}: ${release.title}${
+    release.released ? " (" + release.released + ")" : ""
+  }`;
   releaseInfoDiv.appendChild(albumName);
 
   release.tracklist.forEach((t) => {
@@ -38,17 +41,19 @@ export const releaseInfo = async (releaseID: string): Promise<void> => {
     }
   });
 
-  const personnel = document.createElement("h3");
-  personnel.classList.add("personnel-heading");
-  personnel.innerHTML = "<br>Personnel:";
-  releaseInfoDiv.appendChild(personnel);
+  if (release.extraartists.length > 0) {
+    const personnel = document.createElement("h3");
+    personnel.classList.add("personnel-heading");
+    personnel.innerHTML = "<br>Personnel:";
+    releaseInfoDiv.appendChild(personnel);
 
-  release.extraartists.forEach((e) => {
-    const extraArtist = document.createElement("p");
-    extraArtist.classList.add("personnel-member");
-    extraArtist.textContent = `${e.role}: ${e.name}${
-      e.tracks ? " (" + e.tracks + ")" : ""
-    }`;
-    releaseInfoDiv.appendChild(extraArtist);
-  });
+    release.extraartists.forEach((e) => {
+      const extraArtist = document.createElement("p");
+      extraArtist.classList.add("personnel-member");
+      extraArtist.textContent = `${e.role}: ${e.name}${
+        e.tracks ? " (" + e.tracks + ")" : ""
+      }`;
+      releaseInfoDiv.appendChild(extraArtist);
+    });
+  }
 };

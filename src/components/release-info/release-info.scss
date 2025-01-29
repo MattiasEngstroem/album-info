@@ -1,4 +1,4 @@
-@use "/src/main.scss";
+@use "/src/main.scss" as *;
 
 .release-info img {
   width: 85%;
@@ -7,20 +7,15 @@
 }
 
 .release-info {
+  background-color: rgb(210, 230, 171);
+
   max-height: 100%;
   min-height: 0;
   overflow-y: scroll;
 
-  &::-webkit-scrollbar {
-    width: 8px;
+  .track-name {
+    font-weight: 600;
   }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+  @include custom-scrollbar;
 }

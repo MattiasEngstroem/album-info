@@ -44,11 +44,12 @@ export const renderCards = async (
     card.classList.add("card");
 
     const mainArtist = document.createElement("p");
-    mainArtist.textContent = `main artist: ${r.artist}`;
+    mainArtist.classList.add("main-artist");
+    mainArtist.textContent = `${r.artist}`;
     card.appendChild(mainArtist);
 
     const title = document.createElement("p");
-    title.textContent = `title: ${r.title}`;
+    title.textContent = `${r.title}`;
     card.appendChild(title);
 
     if (r.year) {

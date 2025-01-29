@@ -1,3 +1,5 @@
+import "./search-form.scss";
+
 import { getArtistID } from "../../API/getArtistID";
 
 import { artistObject } from "../../types/types";

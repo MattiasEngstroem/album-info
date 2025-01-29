@@ -1,0 +1,21 @@
+@use "/src/main.scss";
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input {
+    width: 75%;
+    margin-bottom: 10px;
+  }
+
+  select {
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -1,83 +1,19 @@
+@forward "/src/styles/globals.scss";
+@forward "/src/styles/mixins.scss";
+@forward "/src/styles/variables.scss";
+
 html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
 .container {
-  height: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr 3fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
   gap: 20px;
-
-  .search,
-  .releases,
-  .release-info {
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .release-info {
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 4px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  .releases {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .releases-cards {
-    overflow-y: scroll;
-    max-height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 4px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-  }
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  input {
-    width: 75%;
-    margin-bottom: 10px;
-  }
-
-  select {
-    width: fit-content;
-    margin-bottom: 10px;
-  }
-
-  button {
-    width: 100%;
-  }
 }

@@ -15,10 +15,9 @@ export const releaseInfo = async (releaseID: string): Promise<void> => {
   imageElement.classList.add("album-cover");
   imageElement.src = release.images[0].uri;
   imageElement.alt = "Skivomslag";
-  //imageElement.width = 300;
   releaseInfoDiv.appendChild(imageElement);
 
-  const albumName = document.createElement("h3");
+  const albumName = document.createElement("h2");
   albumName.classList.add("album-name");
   albumName.textContent = `${release.artists_sort}: ${release.title}${
     release.released ? " (" + release.released + ")" : ""

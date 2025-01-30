@@ -1,5 +1,7 @@
 @use "/src/main.scss" as *;
 
+@include import-handwritten-font;
+
 .release-info img {
   width: 85%;
   height: auto;
@@ -7,11 +9,15 @@
 }
 
 .release-info {
-  background-color: rgb(210, 230, 171);
+  background-color: $color3;
 
   max-height: 100%;
   min-height: 0;
   overflow-y: scroll;
+
+  .album-name {
+    font-family: $handwritten;
+  }
 
   .track-name {
     font-weight: 600;

@@ -1,3 +1,4 @@
+import { keyAndSecret } from "../APIkey/APIkey";
 import { artistObject } from "../types/types";
 
 // Ta reda på artist-id genom att söka på artistnamn
@@ -10,8 +11,7 @@ export const getArtistID = async (
     {
       method: "GET",
       headers: {
-        Authorization:
-          "Discogs key=sjilKPMBNnmVNDdhtGTT, secret=HNqWkXuooaRDmJeOIvPJuORXvqzUtQHk",
+        Authorization: keyAndSecret,
         "User-Agent": "RecordedMusicians/1.0 +http://localhost:5173",
       },
     }

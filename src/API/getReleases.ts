@@ -1,3 +1,4 @@
+import { keyAndSecret } from "../APIkey/APIkey";
 import { releaseObject } from "../types/types";
 
 //Använd artist-id för att ta reda på vilka releaser artisten medverkar på
@@ -10,13 +11,13 @@ export const getReleases = async (
     {
       method: "GET",
       headers: {
-        Authorization:
-          "Discogs key=sjilKPMBNnmVNDdhtGTT, secret=HNqWkXuooaRDmJeOIvPJuORXvqzUtQHk",
+        Authorization: keyAndSecret,
         "User-Agent": "RecordedMusicians/1.0 +http://localhost:5173",
       },
     }
   );
   const data1 = await response1.json();
+  console.log(data1);
   const numberOfItems: string = String(data1.pagination.items);
 
   const response2 = await fetch(
@@ -24,8 +25,7 @@ export const getReleases = async (
     {
       method: "GET",
       headers: {
-        Authorization:
-          "Discogs key=sjilKPMBNnmVNDdhtGTT, secret=HNqWkXuooaRDmJeOIvPJuORXvqzUtQHk",
+        Authorization: keyAndSecret,
         "User-Agent": "RecordedMusicians/1.0 +http://localhost:5173",
       },
     }

@@ -17,8 +17,6 @@ export const createSearchForm = (): void => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    console.log(sortBy.value);
-
     const search: string = input.value;
     // input.value = "";
     let searchPlus: string = "";

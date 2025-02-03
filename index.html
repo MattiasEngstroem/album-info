@@ -7,11 +7,13 @@
   </head>
   <body>
     <script type="module" src="/src/main.ts"></script>
-    <header>
-      <nav></nav>
-    </header>
+    <nav class="navbar">
+      <a id="link-search">Search</a>
+      <a id="link-releases">Releases</a>
+      <a id="link-info">Release Info</a>
+    </nav>
     <div class="container">
-      <div class="search">
+      <div class="search" id="search-section">
         <div class="search-form">
           <form>
             <label for="search-input">Artist / Musician: </label>
@@ -28,14 +30,13 @@
         </div>
         <div class="search-history"></div>
       </div>
-      <div class="releases">
+      <div class="releases" id="releases-section">
         <div class="releases-header">
           <h3 class="releases-header-content"></h3>
         </div>
         <div class="releases-cards"></div>
       </div>
-      <div class="release-info"></div>
+      <div class="release-info" id="info-section"></div>
     </div>
-    <footer></footer>
   </body>
 </html>

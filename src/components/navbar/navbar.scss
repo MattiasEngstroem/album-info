@@ -1,0 +1,20 @@
+@use "/src/main.scss" as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(51, 51, 51, 0.4);
+  display: none; // Default är att navbar är gömd
+  justify-content: space-around;
+  padding: 10px;
+  z-index: 1000;
+
+  a {
+    color: $color2;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    display: flex; // Visa navbar på mobil
+  }
+}

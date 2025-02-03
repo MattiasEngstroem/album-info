@@ -7,6 +7,13 @@ export const renderCards = async (
   artist: artistObject,
   sortBy: string
 ): Promise<void> => {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    const releasesSection = document.getElementById(
+      "releases-section"
+    ) as HTMLDivElement;
+    releasesSection?.scrollIntoView({ behavior: "smooth" });
+  }
+
   const header = document.querySelector(
     ".releases-header-content"
   ) as HTMLHeadingElement;

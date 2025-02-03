@@ -3,13 +3,19 @@ import { getReleaseByID } from "../../API/getReleaseByID";
 import { releaseInfoObject } from "../../types/types";
 
 export const releaseInfo = async (releaseID: string): Promise<void> => {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    const infoSection = document.getElementById(
+      "info-section"
+    ) as HTMLDivElement;
+    infoSection?.scrollIntoView({ behavior: "smooth" });
+  }
+
   const releaseInfoDiv = document.querySelector(
     ".release-info"
   ) as HTMLDivElement;
   releaseInfoDiv.textContent = "Please wait...";
   const release: releaseInfoObject = await getReleaseByID(releaseID);
   releaseInfoDiv.textContent = "";
-  console.log(release);
 
   const imageElement = document.createElement("img");
   imageElement.classList.add("album-cover");

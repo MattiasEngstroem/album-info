@@ -20,19 +20,19 @@ body {
 
 @media (max-width: 768px) {
   .container {
-    display: block; // Stapla sektionerna vertikalt
+    display: block;
     height: auto;
   }
 
   .search,
   .releases,
   .release-info {
-    scroll-margin-top: 10px; // Extra utrymme när scrollas till element
-    margin-bottom: 20px; // Mellanrum mellan sektionerna
+    scroll-margin-top: 40px;
+    margin-bottom: 20px;
     overflow: visible;
   }
 
   body {
-    overflow-y: scroll; // Tillåt scrollning globalt
+    overflow-y: scroll;
   }
 }

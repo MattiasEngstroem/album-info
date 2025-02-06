@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 
-src/APIkey
+src/APIkey/APIkey.ts

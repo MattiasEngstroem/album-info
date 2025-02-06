@@ -16,21 +16,20 @@
   overflow-y: auto;
   padding: 10px;
   box-sizing: border-box;
-  background-color: black;
+  width: 100%;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
-  width: 100%;
 
   .card {
-    flex: 1 1 calc(50% - 20px);
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(50% - 20px);
     max-width: 100%;
     background: $color2;
     color: black;
-    padding: 10px;
-    margin: 2px;
     box-sizing: border-box;
     font-family: $handwritten;
     .main-artist {
